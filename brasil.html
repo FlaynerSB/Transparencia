@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Portal de divulgação de candidatura e contas</title>
+  </head>
+<body>
+    <header>      
+        <!--healine da pagina-->
+        <h1>Portal da Transparência Eleitoral</h1>
+         <!-- botoes direcionais -->
+        <a href="index.html">Home</a>
+        <a href="selecionaregiao.html">Busca</a>
+        <a href="quemsomos.html">Quem Somos</a>
+    </header>
+    <div>
+        <!-- barra de busca nominal-->
+        <p>-------------------</p>
+        Busca de candidato por nome
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar por nome..." title="Escreva um nome">
+    </div>
+    <div><p>-------------------</p></div>
+        <!-- Tabela com os Candidatos -->
+    <table id="myTable">
+              <tr class="header">
+                <th style="width:60%;">Nome</th>
+                <th style="width:40%;">Cargo Político</th>
+              </tr>
+              <tr>
+                <td>Antônio Frances</td>
+                <td>Presidente</td>
+              </tr>
+              <tr>
+                <td>Geraldo Bergues</td>
+                <td>Vice-presidente</td>
+              </tr>
+              <tr>
+                <td>Vinicius Moreno</td>
+                <td>Vice-presidente</td>
+              </tr>
+              <tr>
+                <td>Gabriel Souza</td>
+                <td>Presidente</td>
+              </tr>
+              <tr>
+                <td>Lucas Silva</td>
+                <td>Vice-presidente</td>
+              </tr>
+              <tr>
+                <td>Gabriel Mendez</td>
+                <td>Presidente</td>
+              </tr>
+              <tr>
+                <td>Luciana Alves Garcia</td>
+                <td>Vice-presidente</td>
+              </tr>
+              <tr>
+                <td>Brenda Bittencour</td>
+                <td>Presidente</td>
+              </tr>
+      </table>
+    <div>
+        <p>-------------------</p>
+        <a href="javascript:window.history.go(-1)">Voltar</a>
+    </div>
+  
+    <!-- Script para que a busca funcione pelo nome -->
+    <script>
+        function myFunction() {
+          var input, filter, table, tr, td, i;
+          input = document.getElementById("myInput");
+          filter = input.value.toUpperCase();
+          table = document.getElementById("myTable");
+          tr = table.getElementsByTagName("tr");
+          for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+              if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+              } else {
+                tr[i].style.display = "none";
+              }
+            }
+          }
+        }
+    </script>   
+
+</body>
+</html>
